@@ -76,14 +76,16 @@ button[type="submit"]:hover {
 }
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
   text-align: center;
   visibility: hidden;
   width: 100vw;
 }
+
 
 .container > div {
   left: 0;
@@ -91,6 +93,10 @@ button[type="submit"]:hover {
   top: 20vh;
   position: absolute;
 }
+
+
+
+
 
 .one {
   font-size: 4.5rem;
@@ -166,19 +172,22 @@ button[type="submit"]:hover {
   z-index: 1;
 }
 
-.six img {
-  display: inline-block;
-  height: 350px;
-  max-width: 100%;
-  border-radius: 14px;
+/* SLIDE EXTRA STYLES */
+.six-extra,
+.six-extra-2,
+.six-extra-3 {
+  position: relative;
+  top: 10vh;
+  z-index: 1;
 }
 
-.six .hat {
-  position: absolute;
-  left: 41.5%;
-  top: -35%;
-  width: 60px;
-  rotate: 14deg;
+.extra-text {
+  font-size: 2rem;
+  font-weight: lighter;
+  margin: 0 auto;
+  max-width: 800px;
+  line-height: 1.8;
+  padding: 0 20px;
 }
 
 .ballons img {
@@ -275,89 +284,55 @@ button[type="submit"]:hover {
 }
 
 .wish h5 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: lighter;
-  margin: 10px 0 0;
+  margin: 10px auto;
+  max-width: 800px;
+  line-height: 1.8;
 }
 
-.nine p {
-  font-size: 2rem;
-  font-weight: lighter;
+/* ================= MEMORIES FIX ================= */
+
+.memories {
+  width: 100%;
+  padding: 40px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+
+.memories-title {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #ff69b4;
+  text-align: center;
+}
+
+.memories-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  max-width: 1000px;
+}
+
+.memory-item {
+  width: 280px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+.memory-item img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+}
 #replay {
-  cursor: pointer;
-  z-index: 3;
+  position: relative;
+  z-index: 9999;
 }
 
-/* Media Queries */
-@media screen and (max-height: 1000px) {
-  .six .hat {
-    left: 40%;
-  }
-}
-
-@media screen and (max-height: 800px) {
-  .six .hat {
-    left: 37%;
-  }
-}
-
-@media screen and (max-height: 700px) {
-  .six .hat {
-    left: 32%;
-  }
-}
-
-@media screen and (max-height: 850px) and (max-width: 450px) {
-  .six .hat {
-    left: 32%;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .login_form{
-    width: 350px;
-    height: 250px;
-  }
-
-  .container {
-    width: 100%;
-    padding: 0 10px;
-  }
-
-  .four .text-box {
-    width: 90%;
-  }
-
-  .text-box .fake-btn {
-    bottom: -50px;
-    right: 5px;
-  }
-
-  .idea-5 span {
-    display: block;
-  }
-
-  .idea-6 span {
-    font-size: 10rem;
-  }
-
-  .six .hat {
-    /* top: -20px; */
-    width: 50px;
-  }
-
-  .wish-hbd {
-    font-size: 2.2em;
-  }
-
-  .wish h5 {
-    font-size: .8rem;
-  }
-
-  .nine p {
-    font-size: 1.5rem;
-    font-weight: lighter;
-  }
-}

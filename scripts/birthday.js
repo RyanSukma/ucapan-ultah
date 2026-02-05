@@ -4,7 +4,6 @@
 window.addEventListener("load", () => {
   Swal.fire({
     title: "Do you want to play music in the background?",
-    // text: "You won't be able to revert this!",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
@@ -22,7 +21,7 @@ window.addEventListener("load", () => {
 });
 
 const animationTimeline = () => {
-  // split chars that needs  to be animted individually
+  // split chars that needs to be animted individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
   const hbd = document.getElementsByClassName("wish-hbd")[0];
 
@@ -208,36 +207,18 @@ const animationTimeline = () => {
       },
       0.2
     )
-    .from(
-      ".profile-picture",
-      0.5,
-      {
-        scale: 3.5,
-        opacity: 0,
-        x: 25,
-        y: -25,
-        rotationZ: -45,
-      },
-      "-=2"
-    )
-    .from(".hat", 0.5, {
-      x: -100,
-      y: 350,
-      rotation: -180,
-      opacity: 0,
-    })
     .staggerFrom(
       ".wish-hbd span",
       0.7,
       {
         opacity: 0,
         y: -50,
-        // scale: 0.3,
         rotation: 150,
         skewX: "30deg",
         ease: Elastic.easeOut.config(1, 0.5),
       },
-      0.1
+      0.1,
+      "-=2"
     )
     .staggerFromTo(
       ".wish-hbd span",
@@ -265,6 +246,57 @@ const animationTimeline = () => {
       },
       "party"
     )
+    .to(
+      ".wish",
+      0.5,
+      {
+        opacity: 0,
+        y: 30,
+      },
+      "+=4"
+    )
+    // ANIMASI SLIDE EXTRA 1
+    .from(".six-extra", 0.7, {
+      opacity: 0,
+      y: 20,
+    })
+    .to(
+      ".six-extra",
+      0.7,
+      {
+        opacity: 0,
+        y: -20,
+      },
+      "+=3"
+    )
+    // ANIMASI SLIDE EXTRA 2
+    .from(".six-extra-2", 0.7, {
+      opacity: 0,
+      y: 20,
+    })
+    .to(
+      ".six-extra-2",
+      0.7,
+      {
+        opacity: 0,
+        y: -20,
+      },
+      "+=3"
+    )
+    // ANIMASI SLIDE EXTRA 3
+    .from(".six-extra-3", 0.7, {
+      opacity: 0,
+      y: 20,
+    })
+    .to(
+      ".six-extra-3",
+      0.7,
+      {
+        opacity: 0,
+        y: -20,
+      },
+      "+=3"
+    )
     .staggerTo(
       ".eight svg",
       1.5,
@@ -282,6 +314,34 @@ const animationTimeline = () => {
       y: 30,
       zIndex: "-1",
     })
+    // ANIMASI MEMORIES
+    .from(".memories", 0.8, {
+      opacity: 0,
+      scale: 0.8,
+      y: 50,
+    })
+    .staggerFrom(
+      ".memory-item",
+      0.6,
+      {
+        opacity: 0,
+        scale: 0.5,
+        rotation: -15,
+        y: 50,
+        ease: Back.easeOut,
+      },
+      0.15
+    )
+    .to(
+      ".memories",
+      0.8,
+      {
+        opacity: 0,
+        scale: 0.8,
+        y: -50,
+      },
+      "+=4"
+    )
     .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
     .to(
       ".last-smile",
